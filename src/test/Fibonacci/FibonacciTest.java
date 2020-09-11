@@ -9,6 +9,6 @@ class FibonacciTest {
 
     @Test
     void TestCase1() {
-        assertEquals(701408733, Fibonacci.getNthFibonacci(45));
+        assertEquals(Fibonacci.getNthFibonacci(6), 5);
     }
 }
