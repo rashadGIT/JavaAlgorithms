@@ -18,6 +18,19 @@ public class BinaryTree {
         return insert(values, 0);
     }
 
+    public static BinaryTree testTree(){
+        BinaryTree root = new BinaryTree(10);
+        root.left = new BinaryTree(5);
+        root.left.left = new BinaryTree(2);
+        root.left.left.left = new BinaryTree(1);
+        root.left.right = new BinaryTree(5);
+        root.right = new BinaryTree(15);
+        root.right.left = new BinaryTree(13);
+        root.right.left.right = new BinaryTree(14);
+        root.right.right = new BinaryTree(22);
+        return root;
+    }
+
     private BinaryTree insert(List<Integer> values, int i) {
         if (i >= values.size()) return null;
 
