@@ -3,9 +3,7 @@ package main.Factorial;
 public class Factorial {
 
     public static void main(String[] args) {
-        int num = 10;
-        System.out.println("Factorial of " + num + " is " + factorial(num));
-
+        System.out.println(factorial(10));
     }
 
     public static int factorial(int n) {
