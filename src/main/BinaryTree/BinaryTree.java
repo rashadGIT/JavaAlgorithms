@@ -1,11 +1,6 @@
-package main.BinarySearch;
+package main.BinarySearchTree;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.IntStream;
-
-public class BinarySearch {
+public class BinarySearchTree {
     public static void main(String[] args) {
         int[] array = new int[]{0, 1, 21, 33, 45, 45, 61, 71, 72, 73};
         int target = 33;

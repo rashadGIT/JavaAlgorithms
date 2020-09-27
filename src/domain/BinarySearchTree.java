@@ -8,10 +8,46 @@ public class BinaryTree {
     public BinaryTree left;
     public BinaryTree right;
 
+    public static void main(String[] args) {
+        BinaryTree root = BinaryTree.testTree();
+        System.out.println(root.contains(100));
+
+    }
+
     public BinaryTree(int value) {
         this.value = value;
         this.left = null;
         this.right = null;
+    }
+
+    public BinaryTree insert(int value) {
+        // Write your code here.
+        // Do not edit the return statement of this method.
+        return this;
+    }
+
+    public boolean contains(int value) {
+        if(value < this.value) {
+            if(this.left == null){
+                return false;
+            } else {
+                return this.left.contains(value);
+            }
+        } else if (value > this.value) {
+            if(this.right == null){
+                return false;
+            } else {
+                return right.contains(value);
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public BinaryTree remove(int value) {
+        // Write your code here.
+        // Do not edit the return statement of this method.
+        return this;
     }
 
     public BinaryTree insert(List<Integer> values) {
