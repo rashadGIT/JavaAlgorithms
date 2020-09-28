@@ -1,10 +1,10 @@
 package domain;
 
 public class Level {
-    public BinaryTree root;
+    public BinarySearchTree root;
     public int depth;
 
-    public Level(BinaryTree root, int depth){
+    public Level(BinarySearchTree root, int depth){
         this.root = root;
         this.depth = depth;
     }
