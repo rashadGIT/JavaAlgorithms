@@ -1,6 +1,6 @@
-package main.BinarySearchTree;
+package main.BinaryTree;
 
-public class BinarySearchTree {
+public class BinaryTree {
     public static void main(String[] args) {
         int[] array = new int[]{0, 1, 21, 33, 45, 45, 61, 71, 72, 73};
         int target = 33;
@@ -12,12 +12,12 @@ public class BinarySearchTree {
 
     public static int binarySearchHelperLoop(int[] array,int target, int left, int right){
         while(left <= right){
-            int middle =(int) Math.floor((left+right)/2);
-            int patentialMarch = array[middle];
-            if(target == patentialMarch){
+            int middle =(int) Math.floor((left + right) >> 1);
+            int potentialMatch = array[middle];
+            if(target == potentialMatch){
                 return middle;
             }
-            else if (target < patentialMarch){
+            else if (target < potentialMatch){
                 right = middle - 1;
             }
             else{
@@ -30,11 +30,11 @@ public class BinarySearchTree {
 
     public static int binarySearchHelperRecursive(int[] array,int target, int left, int right){
         if(left > right) return -1;
-        int middle =(int) Math.floor((left+right)/2);
-        int patentialMarch = array[middle];
-        if(target == patentialMarch){
+        int middle =(int) Math.floor((left + right) >> 1);
+        int potentialMatch = array[middle];
+        if(target == potentialMatch){
             return middle;
-        }else if(target < patentialMarch){
+        }else if(target < potentialMatch){
             return binarySearchHelperRecursive(array,target,left,middle - 1);
         }
         else {
