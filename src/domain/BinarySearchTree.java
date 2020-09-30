@@ -72,9 +72,8 @@ public class BinarySearchTree {
         }
     }
 
-    public BinarySearchTree remove(int value) {
+    public void remove(int value) {
         remove(value,null);
-        return this;
     }
 
     private void remove(int value, BinarySearchTree parent){
@@ -119,6 +118,28 @@ public class BinarySearchTree {
 
     public BinarySearchTree insert(List<Integer> values) {
         return insert(values, 0);
+    }
+
+    public static int getTreeHeight(BinarySearchTree tree) {
+        return getTreeHeight(tree, 0);
+    }
+
+    static int getTreeHeight(BinarySearchTree tree, int height) {
+        if (tree == null) return height;
+        int leftTreeHeight = getTreeHeight(tree.left, height + 1);
+        int rightTreeHeight = getTreeHeight(tree.right, height + 1);
+        return Math.max(leftTreeHeight, rightTreeHeight);
+    }
+
+    public static List<Integer> inOrderTraverse(BinarySearchTree tree, List<Integer> array) {
+        if (tree.left != null) {
+            inOrderTraverse(tree.left, array);
+        }
+        array.add(tree.value);
+        if (tree.right != null) {
+            inOrderTraverse(tree.right, array);
+        }
+        return array;
     }
 
     public static BinarySearchTree testTree(){
