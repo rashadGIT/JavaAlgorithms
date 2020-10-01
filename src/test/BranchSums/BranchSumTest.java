@@ -1,6 +1,6 @@
 package test.BranchSums;
 
-import domain.BinaryTree;
+import domain.BinarySearchTree;
 import main.BranchSums.BranchSums;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class BranchSumTest {
 
     @Test
     void TestCase1() {
-        BinaryTree tree = new BinaryTree(1).insert(Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10));
+        BinarySearchTree tree = new BinarySearchTree(1).insert(Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10));
         List<Integer> expected = new ArrayList<>(Arrays.asList(15, 16, 18, 10, 11));
         assertEquals(expected, BranchSums.branchSums(tree));
     }
