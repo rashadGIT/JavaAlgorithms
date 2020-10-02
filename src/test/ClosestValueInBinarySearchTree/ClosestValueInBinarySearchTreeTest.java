@@ -1,6 +1,6 @@
 package test.ClosestValueInBinarySearchTree;
 
-import domain.BinaryTree;
+import domain.BinarySearchTree;
 import main.ClosestValueInBinarySearchTree.ClosestValueInBinarySearchTree;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ public class ClosestValueInBinarySearchTreeTest {
 
     int expected = 13;
     int target = 12;
-    BinaryTree root = BinaryTree.testTree();
+    BinarySearchTree root = BinarySearchTree.testTree();
 
     @Test
     public void TestCase1() {
