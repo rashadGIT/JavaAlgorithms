@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +54,27 @@ public class BinarySearchTree {
         return this;
     }
 
+    public void insert(int[] values, int i) {
+        if (i >= values.length) {
+            return;
+        }
+        ArrayDeque<BinarySearchTree> queue = new ArrayDeque<>();
+        queue.addLast(this);
+        while (queue.size() > 0) {
+            BinarySearchTree current = queue.pollFirst();
+            if (current.left == null) {
+                current.left = new BinarySearchTree(values[i]);
+                break;
+            }
+            queue.addLast(current.left);
+            if (current.right == null) {
+                current.right = new BinarySearchTree(values[i]);
+                break;
+            }
+            queue.addLast(current.right);
+        }
+        insert(values, i + 1);
+    }
 
     public boolean contains(int value) {
         if(value < this.value) {
@@ -153,6 +175,27 @@ public class BinarySearchTree {
         root.right.left.right = new BinarySearchTree(14);
         root.right.right = new BinarySearchTree(22);
         return root;
+    }
+
+    public void invert() {
+        ArrayDeque<BinarySearchTree> queue = new ArrayDeque<>();
+        queue.addLast(this);
+        while(queue.size() > 0){
+            BinarySearchTree current = queue.pollFirst();
+            swap(current);
+            if(current.left != null){
+                queue.addLast(current.left);
+            }
+            if(current.right != null){
+                queue.add(current.right);
+            }
+        }
+    }
+
+    private static void swap(BinarySearchTree tree){
+        BinarySearchTree left = tree.left;
+        tree.left = tree.right;
+        tree.right = left;
     }
 
     private BinarySearchTree insert(List<Integer> values, int i) {
