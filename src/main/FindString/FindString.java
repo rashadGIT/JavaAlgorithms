@@ -13,7 +13,7 @@ public class FindString {
         List<String> a = Arrays.asList("Hello", "World");
         List<String> b = Arrays.asList("hi", "Rashad");
 
-        System.out.println(new HashSet<String>(Arrays.asList("ABC".substring(0,3).split(""))).size());
+        System.out.println(new HashSet<>(Arrays.asList("ABC".substring(0,3).split(""))).size());
 
         stringArray(a,b).forEach(x -> System.out.println(x ? "Yes" : "No"));
     }
