@@ -8,9 +8,16 @@ import java.util.Queue;
 public class Node {
     String name;
     List<Node> children = new ArrayList<>();
+    public int value;
+    public Node prev;
+    public Node next;
 
     public Node(String name) {
         this.name = name;
+    }
+
+    public Node(int value) {
+        this.value = value;
     }
 
     public List<String> breadthFirstSearch(List<String> array) {
