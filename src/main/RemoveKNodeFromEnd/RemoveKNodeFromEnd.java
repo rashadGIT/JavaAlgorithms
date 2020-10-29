@@ -20,6 +20,7 @@ public class RemoveKNodeFromEnd {
         if(head != null && second == null){
             head.value = head.next.value;
             head.next = head.next.next;
+            return;
         }
         while(second != null && second.next != null){
             second = second.next;
